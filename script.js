@@ -105,3 +105,27 @@ function filter_Range_In_Place(arr, a, b) {
 let arr1234 = [5, 3, 8, 1];
 console.log(filter_Range_In_Place(arr1234, 1, 4));
 console.log(arr1234);
+
+
+
+
+
+
+// Q No. 4
+// Sort in decreasing order
+
+let arrXYZ = [5, 2, 1, -10, 8];
+
+console.log("array before sorting: ", arrXYZ);
+
+let decreasingSort = arrXYZ.sort((a,b) => {
+    return b-a;
+});
+console.log("After decreasing sort: ", decreasingSort);
+
+
+let ascendingSort = arrXYZ.sort((a,b) => {
+    return a-b;
+});
+console.log("After increasing sort: ", ascendingSort);
+
