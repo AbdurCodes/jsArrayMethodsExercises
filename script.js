@@ -111,6 +111,7 @@ console.log(arr1234);
 
 
 
+
 // Q No. 4
 // Sort in decreasing order
 
@@ -129,3 +130,33 @@ let ascendingSort = arrXYZ.sort((a,b) => {
 });
 console.log("After increasing sort: ", ascendingSort);
 
+
+
+
+
+
+
+// Q No. 5
+// We have an array of strings arr. We’d like to have a sorted copy of it, but keep arr unmodified.
+// Create a function copySorted(arr) that returns such a copy.
+
+let arrToSort = ["HTML", "JavaScript", "CSS"];
+
+// solution:
+// sorts the array but modifies the original array
+// function copySorted(arr) {
+//     return arr.sort();
+// }
+
+// sorts the array keeping the original array intact
+// my solution
+function copySorted(arr) {
+    return arr.toSorted();
+}
+// solution from https://javascript.info/array-methods
+// function copySorted(arr) {
+//     return arr.slice().sort();
+//   }
+
+console.log(copySorted(arrToSort));
+console.log(arrToSort);
