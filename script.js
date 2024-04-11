@@ -228,9 +228,63 @@ let mary = { name: "Mary", age: 28 };
 let people = [ pete, john, mary ];
 
 console.log(sortByAge(people));
-console.log(people[0]);
-console.log(people[1]);
-console.log(people[2]);
-console.log(people[0].name);
-console.log(people[1].name);
-console.log(people[2].name);
+// console.log(people[0]);
+// console.log(people[1]);
+// console.log(people[2]);
+// console.log(people[0].name);
+// console.log(people[1].name);
+// console.log(people[2].name);
+
+
+
+
+
+
+
+// Q No. 9
+// Shuffle an array
+// Write the function shuffle(array) that shuffles (randomly reorders) elements of the array.
+// Multiple runs of shuffle may lead to different orders of elements. 
+
+function shuffle(array){
+    for (let i=array.length-1; i>0; i--) {
+        let j = Math.floor(Math.random()*(i+1));
+        // swapping values
+        // let temp = array[i];
+        // array[i] = array[j];
+        // array[j] = temp;
+        // or "destructuring assignment"
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+// arr = [3, 2, 1];
+// console.log(shuffle(arr));
+// console.log(shuffle(arr));
+// console.log(shuffle(arr));
+
+
+// to check whether all permutations appear with the same probability
+// possible permutations of an array of 3 elements (3! = 3x2x1 = 6)
+let count = {
+    '123': 0,
+    '132': 0,
+    '213': 0,
+    '231': 0,
+    '312': 0,
+    '321': 0, 
+}
+
+for (let i=0; i<1000000; i++){
+    let myarr = [1,2,3];
+    shuffle(myarr);
+    count[myarr.join('')]++;
+}
+
+// for (let key in count) {
+//     console.log(`${key}: ${count[key]}`);
+// }
+// or
+console.log(count);
+
