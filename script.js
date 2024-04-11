@@ -193,17 +193,44 @@ console.log(arrToSort);
 // You have an array of user objects, each one has name, surname and id.
 // Write the code to create another array from it, of objects with id and fullName, where fullName is generated from name and surname.
 
-let john = { name: "John", surname: "Smith", id: 1 };
-let pete = { name: "Pete", surname: "Hunt", id: 2 };
-let mary = { name: "Mary", surname: "Key", id: 3 };
+// let john = { name: "John", surname: "Smith", id: 1 };
+// let pete = { name: "Pete", surname: "Hunt", id: 2 };
+// let mary = { name: "Mary", surname: "Key", id: 3 };
 
-let users = [ john, pete, mary ];
+// let users = [ john, pete, mary ];
 
 // to return array of objects we need to wrap our curly braces in parenthesis, ({})
-let usersMapped = users.map(user => ({
-    'fullName' : `${user.name} ${user.surname}`,
-    'id' : user.id
-}))
+// let usersMapped = users.map(user => ({
+//     'fullName' : `${user.name} ${user.surname}`,
+//     'id' : user.id
+// }))
 
-console.log(usersMapped);
-console.log(users);
+// console.log(usersMapped);
+// console.log(users);
+
+
+
+
+
+
+// Q No. 8
+// Sort users by age
+// Write the function sortByAge(users) that gets an array of objects with the age property and sorts them by age.
+
+function sortByAge(users){
+    return users.sort((a, b) => a.age - b.age);
+}
+
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let people = [ pete, john, mary ];
+
+console.log(sortByAge(people));
+console.log(people[0]);
+console.log(people[1]);
+console.log(people[2]);
+console.log(people[0].name);
+console.log(people[1].name);
+console.log(people[2].name);
