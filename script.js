@@ -363,3 +363,29 @@ let strings = ["Hare", "Krishna", "Hare", "Krishna",
 ];
 
 console.log(unique(strings));
+
+
+
+
+
+
+
+
+
+// Q No. 12
+// Let’s say we received an array of users in the following form
+let users = [
+    {id: 'john', name: "John Smith", age: 20},
+    {id: 'ann', name: "Ann Smith", age: 24},
+    {id: 'pete', name: "Pete Peterson", age: 31},
+  ];
+// Create a function groupById(arr) that creates an object from it, with id as the key, and array items as values (Such function is really handy when working with server data)
+
+function groupById(arr){
+    return arr.reduce((result, current) => {
+        result[current.id] = current;
+        return result;
+    }, {})
+}
+let usersById = groupById(users);
+console.log(usersById);
