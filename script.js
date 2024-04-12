@@ -46,16 +46,16 @@ console.log(camelize('-webkit-transition'));
 // The function should not modify the array. It should return the new array.
 
 
-function filterRange(arr, a, b){
-    // let newArray = arr.filter(value => value >= a && value <= b);
-    let newArray = arr.filter(value => a <= value && b >= value);
-    return newArray;
-}
+// function filterRange(arr, a, b){
+//     // let newArray = arr.filter(value => value >= a && value <= b);
+//     let newArray = arr.filter(value => a <= value && b >= value);
+//     return newArray;
+// }
 
-let arr = [5, 3, 4, 2, 5, 6, 8, 1];
+// let arr = [5, 3, 4, 2, 5, 6, 8, 1];
 
-console.log(filterRange(arr, 1, 4));
-console.log(arr);
+// console.log(filterRange(arr, 1, 4));
+// console.log(arr);
 
 
 
@@ -217,17 +217,17 @@ console.log(arrToSort);
 // Sort users by age
 // Write the function sortByAge(users) that gets an array of objects with the age property and sorts them by age.
 
-function sortByAge(users){
-    return users.sort((a, b) => a.age - b.age);
-}
+// function sortByAge(users){
+//     return users.sort((a, b) => a.age - b.age);
+// }
 
-let john = { name: "John", age: 25 };
-let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 28 };
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
 
-let people = [ pete, john, mary ];
+// let people = [ pete, john, mary ];
 
-console.log(sortByAge(people));
+// console.log(sortByAge(people));
 // console.log(people[0]);
 // console.log(people[1]);
 // console.log(people[2]);
@@ -288,3 +288,25 @@ for (let i=0; i<1000000; i++){
 // or
 console.log(count);
 
+
+
+
+
+
+
+
+// Q No. 10
+// Get average age
+// Write the function getAverageAge(users) that gets an array of objects with property age and returns the average age.
+
+function getAverageAge(users){
+    return users.reduce((totalAge, user) => totalAge + user.age, 0) / users.length;
+};
+
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 29 };
+
+let arr = [ john, pete, mary ];
+
+console.log(getAverageAge(arr));
