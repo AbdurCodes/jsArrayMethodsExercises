@@ -267,26 +267,26 @@ function shuffle(array){
 
 // to check whether all permutations appear with the same probability
 // possible permutations of an array of 3 elements (3! = 3x2x1 = 6)
-let count = {
-    '123': 0,
-    '132': 0,
-    '213': 0,
-    '231': 0,
-    '312': 0,
-    '321': 0, 
-}
+// let count = {
+//     '123': 0,
+//     '132': 0,
+//     '213': 0,
+//     '231': 0,
+//     '312': 0,
+//     '321': 0, 
+// }
 
-for (let i=0; i<1000000; i++){
-    let myarr = [1,2,3];
-    shuffle(myarr);
-    count[myarr.join('')]++;
-}
+// for (let i=0; i<1000000; i++){
+//     let myarr = [1,2,3];
+//     shuffle(myarr);
+//     count[myarr.join('')]++;
+// }
 
 // for (let key in count) {
 //     console.log(`${key}: ${count[key]}`);
 // }
 // or
-console.log(count);
+// console.log(count);
 
 
 
@@ -299,14 +299,67 @@ console.log(count);
 // Get average age
 // Write the function getAverageAge(users) that gets an array of objects with property age and returns the average age.
 
-function getAverageAge(users){
-    return users.reduce((totalAge, user) => totalAge + user.age, 0) / users.length;
-};
+// function getAverageAge(users){
+//     return users.reduce((totalAge, user) => totalAge + user.age, 0) / users.length;
+// };
 
-let john = { name: "John", age: 25 };
-let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 29 };
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 29 };
 
-let arr = [ john, pete, mary ];
+// let arr = [ john, pete, mary ];
 
-console.log(getAverageAge(arr));
+// console.log(getAverageAge(arr));
+
+
+
+
+
+
+
+
+// Q No. 11
+// Filter unique array members
+// Create a function unique(arr) that should return an array with unique items.
+
+// solution 1
+// function unique(arr){
+//     return arr.filter((value, index) => arr.indexOf(value) == index);
+// }
+
+// let strings = ["Hare", "Krishna", "Hare", "Krishna",
+//   "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// ];
+
+// console.log(unique(strings));
+
+// Solution 2 : less efficient than the others
+// function unique(arr){
+//     let uniqueElements = [];
+//     for (let str of arr) {
+//         if (!uniqueElements.includes(str)) {
+//             uniqueElements.push(str);
+//         }
+//     }
+//     return uniqueElements;
+// }
+// let strings = ["Hare", "Krishna", "Hare", "Krishna",
+//   "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// ];
+
+// console.log(unique(strings));
+
+// Solution 3
+// most modern and efficient approach for finding unique elements. It's generally recommended.
+function unique (arr) {
+    let uniqueElementsSet = new Set (arr);
+    // console.log(uniqueElementsSet);
+    // Convert the Set to an array 
+    let uniqueElementsArray = [...uniqueElementsSet];
+    return uniqueElementsArray;
+}
+let strings = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+
+console.log(unique(strings));
